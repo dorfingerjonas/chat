@@ -130,3 +130,45 @@ main > div {
   cursor: pointer;
   user-select: none;
 }
+
+.serverMessageRow, .ownMessageRow, .row {
+  width: 100%;
+  min-height: 5%;
+  font-size: .9vw;
+  display: flex;
+  align-items: center;
+}
+
+.serverMessageRow {
+  justify-content: center;
+}
+
+.ownMessageRow {
+  justify-content: flex-end;
+}
+
+.row {
+  justify-content: flex-start;
+}
+
+.serverMessageRow .message, .ownMessageRow .message, .row .message {
+  max-width: 40%;
+  margin: 1vh 2vw;
+  padding: 1vh 1vw;
+  border-radius: 5px;
+}
+
+.serverMessageRow .message {
+  background: #486491;
+  color: #fff;
+  font-size: .7vw;
+  text-align: center;
+}
+
+.ownMessageRow .message {
+  background: #f5deb3;
+}
+
+.row .message {
+  background: cadetblue;
+}
