@@ -6,7 +6,23 @@ const messages = document.getElementById('messages');
 const signup = document.getElementById('signup');
 let username;
 
-const submitButton = document.getElementById('submitButton');
+signup.addEventListener('click', () => {
+    const accountView = document.getElementById('accountView');
+    const chatView = document.getElementById('chatView');
+
+    if (usernameField.value.trim() !== '') {
+        username = usernameField.value;
+
+        while (messages.firstChild) {
+            messages.removeChild(messages.firstChild);
+        }
+
+        accountView.classList.add('hide');
+        chatView.classList.remove('hide');
+
+        socket.emit('new user', username);
+    }
+});
 
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
