@@ -4,6 +4,7 @@ const userMessage = document.getElementById('userMessage');
 const usernameField = document.getElementById('username');
 const messages = document.getElementById('messages');
 const signup = document.getElementById('signup');
+const msgIds = [];
 let username;
 
 signup.addEventListener('click', () => {
@@ -24,7 +25,9 @@ signup.addEventListener('click', () => {
     }
 });
 
-submitButton.addEventListener('click', (event) => {
+sendMessage.addEventListener('click', (event) => {
+    const msgId = new Date().getTime();
+    msgIds.push(msgId);
     event.preventDefault();
     socket.emit('send message', {msg: userMessage.value, author: username, id: msgId});
     userMessage.value = '';
