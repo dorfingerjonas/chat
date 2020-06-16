@@ -13,9 +13,25 @@ submitButton.addEventListener('click', (event) => {
     socket.emit('chat message', document.getElementById('message').value);
 });
 
-socket.on('chat message broadcast', (msg) => {
-    const li = document.createElement('li');
-    li.textContent = msg;
+socket.on('message broadcast', (data) => {
+    const newRow = document.createElement('div');
+    let classNames = '';
+    
+    const text = document.createElement('p');
+    text.textContent = data.msg;
+    
+    if (msgIds.includes(data.id)) {
+        classNames = 'ownMessageRow';
+    } else {
+        classNames = 'row';
+    }
+    
+    text.setAttribute('class', 'message');
+    newRow.setAttribute('class', classNames);
+    
+    newRow.appendChild(text);
+    messages.appendChild(newRow);
+});
 
 socket.on('user counter', (counter) => {
     // TODO
