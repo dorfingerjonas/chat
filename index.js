@@ -9,8 +9,6 @@ app.use(express.static('public/script'));
 app.use(express.static('public/style'));
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
-
     socket.on('new user', (username) => {
         connectedUsers++;
         sendUsersCounter();
@@ -22,10 +20,8 @@ io.on('connection', (socket) => {
         sendUsersCounter();
     });
 
-    socket.on('chat message', (msg) => {
-        console.log('message: ' + msg);
-
-        io.emit('chat message broadcast', msg);
+    socket.on('send message', (msg) => {
+        io.emit('message broadcast', msg);
     });
 });
 
