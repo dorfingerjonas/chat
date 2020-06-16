@@ -10,7 +10,21 @@ const submitButton = document.getElementById('submitButton');
 
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
-    socket.emit('chat message', document.getElementById('message').value);
+    socket.emit('send message', {msg: userMessage.value, author: username, id: msgId});
+    userMessage.value = '';
+});
+
+socket.on('message broadcast: new user', (user) => {
+    const newRow = document.createElement('div');
+
+    const text = document.createElement('p');
+    text.textContent = getRandomWelcomeMessage(user);
+
+    text.setAttribute('class', 'message');
+    newRow.setAttribute('class', 'serverMessageRow message');
+
+    newRow.appendChild(text);
+    messages.appendChild(newRow);
 });
 
 socket.on('message broadcast', (data) => {
