@@ -1,0 +1,128 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+
+.hide {
+  display: none !important;
+}
+
+main {
+  width: 70vw;
+  height: 85vh;
+  box-shadow: 1px 1px 9px 0px #dbdbdb;
+  background: #fff;
+  border-radius: 3px;
+}
+
+main > div {
+  width: 100%;
+  height: 100%;
+}
+
+#accountView {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+  padding-top: 10%;
+}
+
+#accountView h2 {
+  font-size: 2vw;
+  user-select: none;
+}
+
+#accountView .button {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #166ba2;
+  color: #fff;
+  padding: 1.7vh 1vw;
+  border-radius: 7px;
+  font-size: 1.1vw;
+  cursor: pointer;
+  user-select: none;
+}
+
+#accountView input {
+  width: 60%;
+  padding: .5vh .5vw;
+  text-align: center;
+  font-size: 1.1vw;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid lightgray;
+  transition: all 300ms ease-in-out;
+}
+
+#accountView input:focus {
+  border-color: #166ba2;
+}
+
+#colorBox {
+  width: 100vw;
+  height: 30vh;
+  position: absolute;
+  top: 0;
+  background: #166ba2;
+  z-index: -1;
+}
+
+#messages {
+  width: 100%;
+  height: 90%;
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: contain;
+}
+
+#inputWrapper {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: #686868;
+  border-radius: 0 0 3px 3px;
+}
+
+#controls {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+#controls input {
+  width: 92.1%;
+  border: none;
+  outline: none;
+  padding: 1.7vh .75vw;
+  border-radius: 7px;
+  font-size: 1vw;
+}
+
+#controls .button {
+  background: #fff;
+  padding: 1.7vh 1vw;
+  border-radius: 7px;
+  font-size: 1.1vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
