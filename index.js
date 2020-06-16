@@ -5,9 +5,14 @@ const io = require('socket.io')(http);
 
 app.use(express.static('public'));
 app.use(express.static('public/script'));
+app.use(express.static('public/style'));
 
 io.on('connection', (socket) => {
     console.log('a user connected');
+
+    socket.on('new user', (username) => {
+        io.emit('chat message broadcast: new user', username);
+    });
 
     socket.on('disconnect', () => {
         console.log('user disconnected');
