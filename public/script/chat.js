@@ -1,4 +1,10 @@
 const socket = io();
+const sendMessage = document.getElementById('sendMessage');
+const userMessage = document.getElementById('userMessage');
+const usernameField = document.getElementById('username');
+const messages = document.getElementById('messages');
+const signup = document.getElementById('signup');
+let username;
 
 const submitButton = document.getElementById('submitButton');
 
