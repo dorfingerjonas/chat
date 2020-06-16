@@ -17,7 +17,9 @@ socket.on('chat message broadcast', (msg) => {
     const li = document.createElement('li');
     li.textContent = msg;
 
-    document.getElementById('messages').appendChild(li);
+socket.on('user counter', (counter) => {
+    // TODO
+    // print message useful
 });
 
 function getRandomWelcomeMessage(username) {
