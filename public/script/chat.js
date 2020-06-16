@@ -76,12 +76,19 @@ function getRandomWelcomeMessage(username) {
         'A wild @ appeared.',
         'Welcome, @. We hope you brought pizza.',
         'Good to see you, @.',
-        '@ just landed.',
-        '@ hopped into the chatroom.',
+        'Swoooosh. @ just landed.',
+        '@ hopped into the chatroom. Kangaroo!!',
         'Welcome @. Say hi!',
         'Everyone welcome @!',
         '@ joined the party!',
-        'Glad you are here @.'
+        'Glad you are here, @.',
+        '@ just showed up!',
+        '@ is here.',
+        '@ just joined. Everyone, look busy!',
+        'Welcome, @. Stay a while and listen.',
+        'Welcome, @. We were expecting you ( ͡° ͜ʖ ͡°)',
+        '@ just joined. Hide your bananas.',
+        '@ just showed up. Hold my beer.'
     ];
 
     return greetings[Math.floor(Math.random() * greetings.length)].replace('@', username);
