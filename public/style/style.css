@@ -86,9 +86,7 @@ main > div {
 #messages {
   width: 100%;
   height: 90%;
-  background-repeat: repeat-x;
-  background-position: center center;
-  background-size: contain;
+  overflow-y: scroll;
 }
 
 #inputWrapper {
