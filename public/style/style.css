@@ -18,6 +18,13 @@ body {
   display: none !important;
 }
 
+#userCounter {
+  position: absolute;
+  top: 2.5vh;
+  color: #fff;
+  left: 16vw;
+}
+
 main {
   width: 70vw;
   height: 85vh;
