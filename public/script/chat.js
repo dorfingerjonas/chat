@@ -77,8 +77,7 @@ socket.on('message broadcast', (data) => {
 });
 
 socket.on('user counter', (counter) => {
-    // TODO
-    // print message useful
+    userCounter.textContent = `connected users: ${counter}`;
 });
 
 function getRandomWelcomeMessage(username) {
