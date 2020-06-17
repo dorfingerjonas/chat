@@ -102,6 +102,12 @@ socket.on('message broadcast', (data) => {
     newRow.appendChild(text);
     newRow.appendChild(time);
     messages.appendChild(newRow);
+
+    messages.scrollTo({
+        top: messages.scrollHeight,
+        left: 0,
+    });
+
 });
 
 socket.on('user counter', (counter) => {
