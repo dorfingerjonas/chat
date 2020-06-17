@@ -197,3 +197,18 @@ img {
 .row .message {
   background: cadetblue;
 }
+
+.ownMessageRow span {
+  margin: .3vh 2.5vw 1vh 0;
+  font-size: .7vw;
+}
+
+.row span {
+  margin: .3vh 0 1vh 2.5vw;
+  font-size: .7vw;
+}
+
+.row span:nth-child(1) {
+  margin: 1vh 0 .5vh 2.2vw;
+  font-size: 1vw;
+}
