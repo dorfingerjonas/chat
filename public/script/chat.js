@@ -78,10 +78,9 @@ socket.on('message broadcast', (data) => {
     } else {
         text = document.createElement('p');
     }
-    
-    const text = document.createElement('p');
+
     text.textContent = data.msg;
-    
+
     const time = document.createElement('span');
     const date = new Date(data.id);
     time.textContent = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}`;
