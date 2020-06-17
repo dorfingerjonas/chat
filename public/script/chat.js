@@ -22,6 +22,8 @@ signup.addEventListener('click', () => {
         chatView.classList.remove('hide');
 
         socket.emit('new user', username);
+
+        userMessage.focus();
     }
 });
 
