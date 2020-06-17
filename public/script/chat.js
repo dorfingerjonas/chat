@@ -65,6 +65,19 @@ socket.on('message broadcast: new user', (user) => {
 socket.on('message broadcast', (data) => {
     const newRow = document.createElement('div');
     let classNames = '';
+    let text;
+
+    if (isUrl(data.msg)) {
+        if (isImage(data.msg)) {
+            text = document.createElement('img');
+            text.src = data.msg;
+        } else {
+            text = document.createElement('a');
+            text.href = data.msg;
+        }
+    } else {
+        text = document.createElement('p');
+    }
     
     const text = document.createElement('p');
     text.textContent = data.msg;
