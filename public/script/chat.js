@@ -63,6 +63,10 @@ socket.on('message broadcast', (data) => {
     const text = document.createElement('p');
     text.textContent = data.msg;
     
+    const time = document.createElement('span');
+    const date = new Date(data.id);
+    time.textContent = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}`;
+    
     if (msgIds.includes(data.id)) {
         classNames = 'ownMessageRow';
     } else {
@@ -73,6 +77,7 @@ socket.on('message broadcast', (data) => {
     newRow.setAttribute('class', classNames);
     
     newRow.appendChild(text);
+    newRow.appendChild(time);
     messages.appendChild(newRow);
 });
 
