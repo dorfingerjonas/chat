@@ -141,19 +141,20 @@ main > div {
   min-height: 5%;
   font-size: .9vw;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .serverMessageRow {
-  justify-content: center;
+  align-items: center;
 }
 
 .ownMessageRow {
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .row {
-  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .serverMessageRow .message, .ownMessageRow .message, .row .message {
