@@ -90,6 +90,10 @@ socket.on('message broadcast', (data) => {
         classNames = 'ownMessageRow';
     } else {
         classNames = 'row';
+
+        const usernameText = document.createElement('span');
+        usernameText.textContent = data.author;
+        newRow.appendChild(usernameText);
     }
     
     text.setAttribute('class', 'message');
