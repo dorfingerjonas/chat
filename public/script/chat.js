@@ -38,11 +38,14 @@ window.addEventListener('keydown', (event) => {
 });
 
 sendMessage.addEventListener('click', (event) => {
-    const msgId = new Date().getTime();
-    msgIds.push(msgId);
-    event.preventDefault();
-    socket.emit('send message', {msg: userMessage.value, author: username, id: msgId});
-    userMessage.value = '';
+    if (userMessage.value.trim() !== '') {
+        const msgId = new Date().getTime();
+        msgIds.push(msgId);
+        event.preventDefault();
+        socket.emit('send message', {msg: userMessage.value, author: username, id: msgId});
+        userMessage.value = '';
+        userMessage.focus();
+    }
 });
 
 socket.on('message broadcast: new user', (user) => {
