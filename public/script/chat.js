@@ -25,6 +25,16 @@ signup.addEventListener('click', () => {
     }
 });
 
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        if (document.activeElement.id === userMessage.id) {
+            sendMessage.click();
+        } else if (document.activeElement.id === usernameField.id) {
+            signup.click();
+        }
+    }
+});
+
 sendMessage.addEventListener('click', (event) => {
     const msgId = new Date().getTime();
     msgIds.push(msgId);
