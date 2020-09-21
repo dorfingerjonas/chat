@@ -115,25 +115,25 @@ socket.on('user counter', (counter) => {
 
 function getRandomWelcomeMessage(username) {
     const greetings = [
-        'A wild @ appeared.',
-        'Welcome, @. We hope you brought pizza.',
-        'Good to see you, @.',
-        'Swoooosh. @ just landed.',
-        '@ hopped into the chatroom. Kangaroo!!',
-        'Welcome @. Say hi!',
-        'Everyone welcome @!',
-        '@ joined the party!',
-        'Glad you are here, @.',
-        '@ just showed up!',
-        '@ is here.',
-        '@ just joined. Everyone, look busy!',
-        'Welcome, @. Stay a while and listen.',
-        'Welcome, @. We were expecting you ( ͡° ͜ʖ ͡°)',
-        '@ just joined. Hide your bananas.',
-        '@ just showed up. Hold my beer.'
+        `A wild ${username} appeared.`,
+        `Welcome, ${username}. We hope you brought pizza.`,
+        `Good to see you, ${username}.`,
+        `Swoooosh. ${username} just landed.`,
+        `${username} hopped into the chatroom. Kangaroo!!`,
+        `Welcome ${username}. Say hi!`,
+        `Everyone welcome ${username}!`,
+        `${username} joined the party!`,
+        `Glad you are here, ${username}.`,
+        `${username} just showed up!`,
+        `${username} is here.`,
+        `${username} just joined. Everyone, look busy!`,
+        `Welcome, ${username}. Stay a while and listen.`,
+        `Welcome, ${username}. We were expecting you ( ͡° ͜ʖ ͡°)`,
+        `${username} just joined. Hide your bananas.`,
+        `${username} just showed up. Hold my beer.`
     ];
 
-    return greetings[Math.floor(Math.random() * greetings.length)].replace('@', username);
+    return greetings[Math.floor(Math.random() * greetings.length)];
 }
 
 function isUrl(message) {
