@@ -12,7 +12,7 @@ io.on('connection', (socket) => {
     socket.on('new user', (username) => {
         connectedUsers++;
         sendUsersCounter();
-        io.emit('message broadcast: new user', username);
+        io.emit('message broadcast: new user', username, getRandomWelcomeMessage(username));
     });
 
     socket.on('disconnect', () => {
@@ -25,10 +25,33 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(3000, () => {
-    console.log('listening on *:3000');
+http.listen(80, () => {
+    console.log('listening on http://localhost/');
 });
 
 function sendUsersCounter() {
     io.emit('user counter', connectedUsers);
+}
+
+function getRandomWelcomeMessage(username) {
+    const greetings = [
+        `A wild ${username} appeared.`,
+        `Welcome, ${username}. We hope you brought pizza.`,
+        `Good to see you, ${username}.`,
+        `Swoooosh. ${username} just landed.`,
+        `${username} hopped into the chatroom. Kangaroo!!`,
+        `Welcome ${username}. Say hi!`,
+        `Everyone welcome ${username}!`,
+        `${username} joined the party!`,
+        `Glad you are here, ${username}.`,
+        `${username} just showed up!`,
+        `${username} is here.`,
+        `${username} just joined. Everyone, look busy!`,
+        `Welcome, ${username}. Stay a while and listen.`,
+        `Welcome, ${username}. We were expecting you ( ͡° ͜ʖ ͡°)`,
+        `${username} just joined. Hide your bananas.`,
+        `${username} just showed up. Hold my beer.`
+    ];
+
+    return greetings[Math.floor(Math.random() * greetings.length)];
 }
