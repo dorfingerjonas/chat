@@ -214,3 +214,9 @@ img {
   margin: 1vh 0 .5vh 2.2vw;
   font-size: 1vw;
 }
+
+emoji-picker {
+  position: fixed;
+  bottom: 17vh;
+  left: 16vw;
+}
