@@ -7,23 +7,30 @@
     <link rel="stylesheet" href="./style/style.css">
     <script src='https://kit.fontawesome.com/e7df220bd7.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap' rel='stylesheet'>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
   </head>
   <body>
     <span id="userCounter"></span>
     <main>
       <div id="accountView">
         <h2>enter your nickname</h2>
-        <input type="text" placeholder="Username" id="username" maxlength="25" autocomplete="off">
-        <span class="button" id="signup"><span>sign up</span></span>
+        <input type="text" placeholder="nickname" id="username" maxlength="25" autocomplete="off">
+        <span class="button" id="signup"><span>join</span></span>
       </div>
 
       <div id="chatView" class="hide">
+        <emoji-picker class="hide"></emoji-picker>
+
         <div id="messages"></div>
 
         <div id="inputWrapper">
           <div id="controls">
+            <span class="button" id="openEmoji">
+              <i class="far fa-smile"></i>
+            </span>
+
             <input type="text" placeholder="write a message" id="userMessage">
-          
+
             <span class="button" id="sendMessage">
               <i class="far fa-paper-plane"></i>
             </span>
