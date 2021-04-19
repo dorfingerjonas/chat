@@ -5,6 +5,8 @@ const userCounter = document.getElementById('userCounter');
 const usernameField = document.getElementById('username');
 const messages = document.getElementById('messages');
 const signup = document.getElementById('signup');
+const openEmoji = document.getElementById('openEmoji');
+const emojiPicker = document.querySelector('emoji-picker');
 const msgIds = [];
 let username;
 
@@ -28,6 +30,10 @@ signup.addEventListener('click', () => {
     }
 });
 
+openEmoji.addEventListener('click', () => {
+    emojiPicker.classList.toggle('hide');
+});
+
 window.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         if (document.activeElement.id === userMessage.id) {
@@ -49,11 +55,11 @@ sendMessage.addEventListener('click', (event) => {
     }
 });
 
-socket.on('message broadcast: new user', (user) => {
+socket.on('message broadcast: new user', (user, message) => {
     const newRow = document.createElement('div');
 
     const text = document.createElement('p');
-    text.textContent = getRandomWelcomeMessage(user);
+    text.textContent = message;
 
     text.setAttribute('class', 'message');
     newRow.setAttribute('class', 'serverMessageRow message');
@@ -111,6 +117,10 @@ socket.on('message broadcast', (data) => {
 
 socket.on('user counter', (counter) => {
     userCounter.textContent = `connected users: ${counter}`;
+});
+
+emojiPicker.addEventListener('emoji-click', event => {
+    userMessage.value += event.detail.unicode;
 });
 
 function getRandomWelcomeMessage(username) {
